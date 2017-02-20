@@ -74,10 +74,32 @@ aggregate.24510 <- with(
 )
 colnames(aggregate.24510) <- c("year", "Emissions")
 
-NEI.24510.type <- ddply(NEI.24510, .(type, year), summarize, Emissions = sum(Emissions))
-NEI.24510.type$Pollutant_Type <- NEI.24510.type$type
+BatltimoreMD.type <- ddply(
+	BatltimoreMD,
+	.(type, year),
+	summarize,
+	Emissions = sum(Emissions)
+)
+BatltimoreMD.type$Pollutant_Type <- NEI.24510.type$type
 
-qplot(year, Emissions, data = NEI.24510.type, group = Pollutant_Type, color = Pollutant_Type, 
-    geom = c("point", "line"), ylab = expression("Total Emissions, PM"[2.5]), 
-    xlab = "Year", main = "Total Emissions in U.S. by Type of Pollutant")
+png(
+	filename="plot3.png",
+	width=504,
+	height=504,
+	units="px"
+)
+
+qplot(
+	year,
+	Emissions,
+	data = BatltimoreMD.type,
+	group = Pollutant_Type,
+	color = Pollutant_Type,
+	geom = c("point", "line"),
+	ylab = expression("Total Emissions, PM"[2.5]), 
+	xlab = "Year",
+	main = "Total Emissions in U.S. by Type of Pollutant"
+)
+
+## plot 4
 
