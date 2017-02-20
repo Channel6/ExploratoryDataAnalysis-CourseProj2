@@ -80,7 +80,7 @@ BatltimoreMD.type <- ddply(
 	summarize,
 	Emissions = sum(Emissions)
 )
-BatltimoreMD.type$Pollutant_Type <- NEI.24510.type$type
+BatltimoreMD.type$Pollutant_Type <- BatltimoreMD.type$type
 
 png(
 	filename="plot3.png",
