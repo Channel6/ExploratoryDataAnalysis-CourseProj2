@@ -1,7 +1,7 @@
 #### Exploratory Data Analysis -- Course Project 2 ###
 ##			Glenn Kerbein		    ##
 ##		      February 20, 2017		    ##
-##		           Plot 2		    ##
+##		           Plot 3		    ##
 ######################################################
 
 ## intiailaize data requirements
