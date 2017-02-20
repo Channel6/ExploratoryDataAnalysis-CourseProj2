@@ -37,7 +37,14 @@ polygon(aggregate.data, col = "green", border = "blue")
 
 ## second plot
 BatltimoreMD <- NEI[which(NEI$fips == "24510"), ]
-aggregate.24510 <- with(BatltimoreMD, aggregate(Emissions, by = list(year), sum))
+aggregate.24510 <- with(
+	BatltimoreMD,
+	aggregate(
+		Emissions,
+		by = list(year),
+		sum
+	)
+)
 colnames(aggregate.24510) <- c("year", "Emissions")
 png(
 	filename="plot2.png",
@@ -57,7 +64,14 @@ plot(
 ## third plot
 
 BatltimoreMD <- NEI[which(NEI$fips == "24510"), ]
-aggregate.24510 <- with(BatltimoreMD, aggregate(Emissions, by = list(year), sum))
+aggregate.24510 <- with(
+	BatltimoreMD,
+	aggregate(
+		Emissions,
+		by = list(year),
+		sum
+	)
+)
 colnames(aggregate.24510) <- c("year", "Emissions")
 
 NEI.24510.type <- ddply(NEI.24510, .(type, year), summarize, Emissions = sum(Emissions))
